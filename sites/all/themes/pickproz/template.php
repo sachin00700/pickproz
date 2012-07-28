@@ -67,10 +67,15 @@ function pickproz_process_html(&$vars) {
 /**
  * Override or insert variables into the page templates.
  */
-/* -- Delete this line if you want to use these functions
 function pickproz_preprocess_page(&$vars) {
+//// Add template suggestions based on content type 
+//print '<pre>'; print_r($vars); print '</pre>';
+//  if (isset($vars['node'])) {
+//    $vars['theme_hook_suggestions'][] = "page__node_" . $vars['node']->type;
+//  }
 }
 
+/* -- Delete this line if you want to use these functions
 function pickproz_process_page(&$vars) {
 }
 // */

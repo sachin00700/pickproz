@@ -9,9 +9,13 @@
   base theme  = adaptivetheme
 
 
+;----------// Modular scripts
+  scripts[] = js/scripts.js
+  
 ;----------// Modular stylesheets
 
   stylesheets[all][] = css/html-elements.css
+  stylesheets[all][] = css/fonts.css
   stylesheets[all][] = css/forms.css
   stylesheets[all][] = css/tables.css
   stylesheets[all][] = css/fields.css
