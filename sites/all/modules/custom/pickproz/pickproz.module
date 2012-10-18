@@ -22,3 +22,40 @@ function pickproz_options_one_onehundred() {
   }
   return $options;
 }
+
+function pickproz_form_alter(&$form, &$form_state, $form_id) {
+  
+  if ($form_id == 'pick_node_form') {
+    if (arg(2) != 'edit') {
+      $form['field_pick_mid']['und'][0]['value']['#default_value'] = arg(3);
+    }
+    $form['field_pick_mid']['und'][0]['value']['#type'] = 'hidden';
+    
+    $view_result = views_get_view_result('make_a_pick_lines', 'default', $form['field_pick_mid']['und'][0]['value']['#default_value']);
+    $view_edit_result = views_get_view_result('make_a_pick_edit', 'default', $form['field_pick_mid']['und'][0]['value']['#default_value']);
+    
+    $awayOdds = $view_result[0]->field_field_away_line[0]['raw']['value'];
+    $awayTeam = $view_result[0]->field_field_away_team[0]['raw']['value'];
+    $homeOdds = $view_result[0]->field_field_home_line[0]['raw']['value'];
+    $homeTeam = $view_result[0]->field_field_home_team[0]['raw']['value'];
+    
+    $awayMline = $view_result[0]->field_field_away_m_line[0]['raw']['value'];
+    $homeMline = $view_result[0]->field_field_home_m_line[0]['raw']['value'];
+    
+    if ($awayOdds) {
+      $form['field_pick_winner']['und']['#options'] = array(
+      	$awayTeam => $awayTeam . ' ( ' . $awayOdds . ' )',
+          $homeTeam => $homeTeam . ' ( ' . $homeOdds . ' )',
+        );
+    }
+    else {
+      $form['field_pick_winner']['und']['#options'] = array(
+      	$awayTeam => $awayTeam . ' ( ' . $awayMline . ' )',
+          $homeTeam => $homeTeam . ' ( ' . $homeMline . ' )',
+        );
+    }
+    if (arg(2) == 'edit') {
+      $form['field_pick_winner']['und']['#default_value'] = $view_edit_result[0]->field_field_pick_winner[0]['raw']['value'];
+    }  
+  }
+}

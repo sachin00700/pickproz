@@ -46,7 +46,7 @@
           <?php if ($title || $primary_local_tasks || $secondary_local_tasks || $action_links = render($action_links)): ?>
             <header>
               <?php if (!$is_front && $title): ?>
-                <h1 id="page-title"><?php print $title; ?></h1>
+                <div class="page-title-wrapper"></div><h1 id="page-title"><?php print $title; ?></h1>
               <?php endif; ?>
   
               <?php if ($primary_local_tasks || $secondary_local_tasks || $action_links): ?>

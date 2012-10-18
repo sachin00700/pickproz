@@ -249,29 +249,53 @@ ul.sf-menu a:active {
 
 /* Tabs */
 #tasks {
-  margin-bottom: 1em;
+  margin-bottom: 0;
 }
 ul.primary {
-  border-bottom-color:#ccc;
   margin: 1.5em 0 0;
   padding: 0 0 .2em .3em;
+  border-bottom: none;   
 }
 ul.primary li a {
-  background-color: #f5f5f5;
+  color: #000;
+  background-color: #fff;
+  font-family: 'NegotiateFree';
+  font-size: 20px;  
   margin-right: .08em;
-  border-color: #ccc;
-  padding: .1em .75em .2em;
+  border-color: #000 !important;
+  border-bottom: none;  
+  border-width: 2px;
+  padding: 5px 10px;
+  -khtml-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-radius: 10px 10px 0 0;  
 }
+#tasks ul.primary li.active a {
+  background-color: #0099cc;
+  color: #fff;
+  padding-top: 5px; 
+  border-width: 2px;
+}
+
+#tasks ul.primary li a:hover {
+  background-color: #0099cc;
+  border-color: #000;
+  color: #fff;
+}
+
 .local-tasks ul.primary li a:hover {
-  background-color: #f7f7f7;
-  border-color: #ddd;
+  background-color: #e1f0d3;
+  border-color: #000;
 }
 .local-tasks ul.primary li.active a {
-  background-color: #fff;
-  border-bottom-color: #fff;
+  background-color: #fee5c2 !important;
 }
 ul.secondary {
-  border-bottom: 1px solid #ccc;
+  border-bottom: none;
   margin: 1em 0 0;
   padding: 0 .3em 1em;
 }

@@ -4,7 +4,6 @@ table {
   border-color: #eee;
   font-size: inherit;
   font: 100%;
-  margin: 10px 0;
   padding: 0;
   width: 100%;
 }
@@ -16,21 +15,52 @@ td,
 th {
   vertical-align:middle;
 }
-caption,
+.page-list-lines .view-list-lines{
+  border: 3px solid #000;
+  border-top: none;
+  margin-bottom: 20px;
+}
+caption {
+  background-color: #ecbba8;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 3px solid #000;  
+}
 th,
 td {
   text-align:left;
 }
 thead th {
-  border-bottom: 1px solid #eee;
   color: #494949;
   font-weight: 700;
 }
 td,
 th {
+  margin: 0;
+  padding: 5px 7px;  
+  border-right: 3px solid #000;  
+}
+td {
+  border-bottom: 3px solid #fff;  
+}
+th {  
+  border-top: 3px solid #000; 
+  border-bottom: 3px solid #000;
+  background-color: #e1f0d3;     
+}
+th a {
+  text-decoration: none;
+}
+tr.views-row-last td {
   border-bottom: none;
   margin: 0;
-  padding: 5px 7px;
+  padding: 5px 7px; 
+  border-right: 3px solid #000;  
+}
+td.views-field-nothing,
+th.views-field-nothing,
+tr.views-row-last td.views-field-nothing {
+  border-right: none;  
 }
 tr.even,
 tr.odd {
@@ -38,10 +68,10 @@ tr.odd {
 }
 tr.odd,
 tr.info {
-  background-color: #f5f5f5;
+  background-color: #e0f3f9;  
 }
 tr.even {
-  background-color: #fff;
+  background-color: #ebebeb;
 }
 tr.drag {
   background-color: #fffff0;
@@ -78,3 +108,6 @@ tr td:last-child {
   border-right: 1px solid #eee;
 }
 */
+.view-list-lines ul.pager {
+  border-top: 3px solid #000;
+}
