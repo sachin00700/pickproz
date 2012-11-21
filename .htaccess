@@ -1,7 +1,7 @@
-AuthUserFile /var/www/pickproz.minortech.com/.htpasswd
-AuthType Basic
-AuthName "PickProz Restricted Site"
-Require valid-user
+#AuthUserFile /var/www/pickproz.minortech.com/.htpasswd
+#AuthType Basic
+#AuthName "PickProz Restricted Site"
+#Require valid-user
 #
 # Apache/PHP/Drupal settings:
 #
